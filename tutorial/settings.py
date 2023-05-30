@@ -1,4 +1,4 @@
-# Scrapy settings for jobscrapper project
+# Scrapy settings for tutorial project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "jobscrapper"
+BOT_NAME = "tutorial"
 
-SPIDER_MODULES = ["jobscrapper.spiders"]
-NEWSPIDER_MODULE = "jobscrapper.spiders"
+SPIDER_MODULES = ["tutorial.spiders"]
+NEWSPIDER_MODULE = "tutorial.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "jobscrapper (+http://www.yourdomain.com)"
+#USER_AGENT = "tutorial (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "jobscrapper.middlewares.JobscrapperSpiderMiddleware": 543,
+#    "tutorial.middlewares.TutorialSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "jobscrapper.middlewares.JobscrapperDownloaderMiddleware": 543,
+#    "tutorial.middlewares.TutorialDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "jobscrapper.pipelines.JobscrapperPipeline": 300,
+#    "tutorial.pipelines.TutorialPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
