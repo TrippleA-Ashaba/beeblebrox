@@ -11,6 +11,16 @@ class WwrSpiderSpider(scrapy.Spider):
     allowed_domains = os.environ.get("WWR_DOMAIN").split(",")
     start_urls = os.environ.get("WWR_URLS", "").split(",")
 
+    custom_settings = {
+        "FEEDS": {
+            "wwr_listings.json": {
+                "format": "json",
+                "encoding": "utf8",
+                "overwrite": True,
+            }
+        }
+    }
+
     def parse(self, response):
         for listing in response.css("section.jobs article ul li")[1:-1]:
             region = listing.css("span.region::text").get(default="N/A")
