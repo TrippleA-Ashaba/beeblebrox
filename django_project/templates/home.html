@@ -1,8 +1,39 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} {% load custom_filters %}
 <!--  -->
 {% block content %}
 <section>
-	<h1>Home</h1>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-10">
+			<div class="row">
+				{% for listing in listings %}
+				<div class="col-sm-6 mb-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title fw-bold">{{listing.title}}</h5>
+							<div class="d-flex justify-content-between mt-4">
+								<p class="card-text">
+									<span class="fw-bold"> Company: </span>
+
+									<a
+										href="{{listing.urls|get_item:0}}"
+										class="text-decoration-none">
+										{{listing.company}}</a
+									>
+								</p>
+								<p class="card-text">
+									<span class="fw-bold"> Location: </span>
+									{{ listing.region }}
+								</p>
+							</div>
+							<a href="{{listing.urls|get_item:1}}" class="btn btn-danger">Apply</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
 </section>
 {% endblock content %}
