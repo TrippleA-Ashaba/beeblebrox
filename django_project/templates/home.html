@@ -16,8 +16,9 @@
 									<span class="fw-bold"> Company: </span>
 
 									<a
+										class="text-decoration-none"
 										href="{{listing.urls|get_item:0}}"
-										class="text-decoration-none">
+										target="_blank">
 										{{listing.company}}</a
 									>
 								</p>
@@ -26,7 +27,12 @@
 									{{ listing.region }}
 								</p>
 							</div>
-							<a href="{{listing.urls|get_item:1}}" class="btn btn-danger">Apply</a>
+							<a
+								class="btn btn-danger"
+								href="{{listing.urls|get_item:1}}"
+								target="_blank"
+								>Apply</a
+							>
 						</div>
 					</div>
 				</div>
