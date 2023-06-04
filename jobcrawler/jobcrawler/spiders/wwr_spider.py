@@ -2,6 +2,7 @@ import os
 
 import scrapy
 from dotenv import load_dotenv
+from jobcrawler.items import JobcrawlerItem as Wwr
 
 load_dotenv()
 
@@ -22,6 +23,8 @@ class WwrSpiderSpider(scrapy.Spider):
     }
 
     def parse(self, response):
+        JOB = Wwr()
+
         for listing in response.css("section.jobs article ul li")[1:-1]:
             region = listing.css("span.region::text").get(default="N/A")
             desired_region = "Anywhere in the World"
@@ -34,9 +37,9 @@ class WwrSpiderSpider(scrapy.Spider):
                     for url in listing.css("a::attr(href)").getall()
                 ]
 
-                yield {
-                    "title": title,
-                    "company": company,
-                    "region": region,
-                    "urls": urls,
-                }
+                JOB["title"] = title
+                JOB["company"] = company
+                JOB["urls"] = urls
+                JOB["region"] = region
+
+                yield JOB
