@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load custom_filters %}
 <!--  -->
 {% block content %}
 <section>
@@ -14,20 +14,17 @@
 							<div class="d-flex justify-content-between mt-4">
 								<p class="card-text">
 									<span class="fw-bold"> Company: </span>
-
-									<a
-										class="text-decoration-none"
-										href="{{listing.urls}}"
-										target="_blank">
-										{{listing.company}}</a
-									>
+									{{listing.company}}
 								</p>
 								<p class="card-text">
 									<span class="fw-bold"> Location: </span>
 									{{ listing.region }}
 								</p>
 							</div>
-							<a class="btn btn-danger" href="{{listing.urls}}" target="_blank"
+							<a
+								class="btn btn-danger"
+								href="{{listing.urls|get_item:1}}"
+								target="_blank"
 								>Apply</a
 							>
 						</div>
@@ -39,4 +36,4 @@
 		<div class="col"></div>
 	</div>
 </section>
-{% endblock content %}
+{% endblock %}

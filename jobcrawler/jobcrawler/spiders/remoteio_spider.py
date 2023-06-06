@@ -33,8 +33,12 @@ class RemoteioSpiderSpider(scrapy.Spider):
             ).get()
             JOB["company"] = listing.css("p[data-text]::text").get()
             JOB["region"] = listing.css('a.px-2[data-tag="true"]::text').get()
-            JOB["urls"] = response.urljoin(
-                listing.css('a.text-lg.text-black[data-title="true"]::attr(href)').get()
-            )
+            JOB["urls"] = [
+                response.urljoin(
+                    listing.css(
+                        'a.text-lg.text-black[data-title="true"]::attr(href)'
+                    ).get()
+                )
+            ]
 
             yield JOB

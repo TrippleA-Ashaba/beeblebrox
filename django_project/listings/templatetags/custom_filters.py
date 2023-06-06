@@ -5,4 +5,4 @@ register = template.Library()
 
 @register.filter
 def get_item(list, index):
-    return list[index] if len(list) > index else None
+    return list[index] if len(list) > index else list[0]
