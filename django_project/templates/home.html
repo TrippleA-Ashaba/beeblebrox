@@ -1,45 +1,5 @@
-{% extends 'base.html' %} {% load custom_filters %}
+{% extends 'base.html' %}
 <!--  -->
 {% block content %}
-<section>
-	<div class="row">
-		<div class="col"></div>
-		<div class="col-10">
-			<div class="row">
-				{% for listing in listings %}
-				<div class="col-sm-6 mb-3">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title fw-bold">{{listing.title}}</h5>
-							<div class="d-flex justify-content-between mt-4">
-								<p class="card-text">
-									<span class="fw-bold"> Company: </span>
-
-									<a
-										class="text-decoration-none"
-										href="{{listing.urls|get_item:0}}"
-										target="_blank">
-										{{listing.company}}</a
-									>
-								</p>
-								<p class="card-text">
-									<span class="fw-bold"> Location: </span>
-									{{ listing.region }}
-								</p>
-							</div>
-							<a
-								class="btn btn-danger"
-								href="{{listing.urls|get_item:1}}"
-								target="_blank"
-								>Apply</a
-							>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-		<div class="col"></div>
-	</div>
-</section>
+<h1 class="text-center">Job listings</h1>
 {% endblock content %}
