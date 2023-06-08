@@ -37,7 +37,15 @@
 					>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
+					<a
+						class="nav-link"
+						hx-get="{% url 'brightermon' %}"
+						hx-target="#main"
+						hx-push-url="true"
+						hx-swap="innerHTML"
+						style="cursor: pointer"
+						>Brighter Monday</a
+					>
 				</li>
 				<li class="nav-item dropdown">
 					<a

@@ -21,5 +21,13 @@ def get_remoteio_listings():
     return listings
 
 
+def get_brightermon_listings():
+    with open(f"{LISTINGS_PATH}/brightermon_listings.json", "r") as f:
+        json_content = f.read()
+
+    listings = json.loads(json_content)
+    return listings
+
+
 if __name__ == "__main__":
-    print(get_wwr_listings())
+    pass
