@@ -10,3 +10,6 @@ db.sqlite3
 
 # playground file
 play.py
+
+package-lock.json
+node_modules
